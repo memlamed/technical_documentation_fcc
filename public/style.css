@@ -1,0 +1,65 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+*{
+    scroll-behavior: smooth;
+}
+
+.container{
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "menu sections";
+    -ms-grid-columns: 200px;
+    grid-template-columns: 200px;
+}
+
+nav{
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: menu;
+    position: fixed;
+}
+
+nav a{
+    display: block;
+}
+
+main{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: sections;
+}
+
+main>section{
+    min-height: 100vh;
+    padding: 10px;
+}
+
+@media (max-width: 800px){
+
+    .container{
+            grid-template-areas: "menu" "sections";
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+    nav{
+        position: inherit;
+    }
+
+    nav{
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    main{
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+
+}
